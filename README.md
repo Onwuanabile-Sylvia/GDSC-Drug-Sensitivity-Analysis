@@ -164,93 +164,54 @@ Correlation analyses were performed using Pearson correlation coefficients to as
 
 ## Key Findings
 
-### Drug Sensitivity Patterns
+### Drug Potency (LN_IC50)
 
-The most potent drugs based on LN_IC50 included:
+- Romidepsin, Bortezomib, Sepantronium bromide, Docetaxel, and Daporinad exhibited the lowest median LN_IC50 values, indicating high potency across cancer cell lines.
+- Ascorbate (Vitamin C), N-acetyl cysteine, Glutathione, Alpha-lipoic acid, and Temozolomide displayed the highest median LN_IC50 values, indicating low potency.
 
-* Romidepsin
-* Bortezomib
-* Sepantronium bromide
-* Docetaxel
-* Daporinad
+### Drug Effectiveness (AUC)
 
-Romidepsin exhibited the lowest median LN_IC50 value, indicating exceptionally strong potency across cancer cell lines.
+- Sepantronium bromide, Staurosporine, CDK9_5038, MG-132, and Dinaciclib showed the lowest median AUC values, reflecting strong overall treatment effectiveness.
+- Motesanib, EPZ5676, PFI3, GSK2830371, and Temozolomide exhibited the highest median AUC values, indicating weak overall treatment responses.
 
-Using AUC as a complementary measure, the strongest inhibitors included:
+### Drug Sensitivity and Resistance (Z_SCORE)
 
-* Sepantronium bromide
-* Staurosporine
-* CDK9_5038
-* MG-132
-* Dinaciclib
+- Several compounds demonstrated consistently negative Z-scores, indicating greater-than-average sensitivity across cancer cell lines.
+- Highly positive Z-score compounds were associated with relative resistance.
+- Certain drugs exhibited substantial variability in Z-score distributions, suggesting cancer-type-specific responses.
 
-These compounds demonstrated broad activity across multiple cancer types.
+### Cancer-Type Responses
 
-### Drug Resistance Patterns
+- Hematological malignancies generally displayed greater sensitivity than many solid tumors.
+- Drug response varied considerably across cancer types, supporting the importance of precision oncology.
 
-The least effective compounds included:
+### Molecular and Biological Factors
 
-* Ascorbate (Vitamin C)
-* N-acetyl cysteine
-* Glutathione
-* Alpha-lipoic acid
-* Temozolomide
-
-These drugs displayed relatively high LN_IC50 and AUC values, indicating weaker overall activity.
-
-### Cancer-Specific Responses
-
-Several cancer types demonstrated strong responses to specific drugs:
-
-| Cancer Type | Most Sensitive Drug |
-| ----------- | ------------------- |
-| LCML        | Dasatinib           |
-| MM          | Bortezomib          |
-| ALL         | Daporinad           |
-
-Drug response varied substantially across cancer types, highlighting the importance of personalized treatment strategies.
-
-### Molecular Influences
-
-Key observations included:
-
-* CNA-positive cell lines showed slightly greater sensitivity.
-* Gene expression status was associated with reduced sensitivity.
-* Methylation demonstrated comparatively modest effects on drug response.
-
-### Biological Influences
-
-* MSI-H cell lines were significantly more sensitive than MSS/MSI-L cell lines.
-* Suspension-growing cell lines generally exhibited greater sensitivity than adherent cell lines.
+- CNA-positive cell lines showed slightly greater sensitivity.
+- MSI-High cell lines demonstrated significantly increased sensitivity compared with MSS/MSI-L cell lines.
+- Suspension-growing cell lines generally exhibited stronger responses than adherent cell lines.
 
 ### Pathway Analysis
 
-The most sensitive pathways included:
-
-* Mitosis
-* Cell Cycle
-* DNA Replication
-* Apoptosis Regulation
-* Protein Stability and Degradation
-
-These pathways represent important therapeutic vulnerabilities in cancer.
+- Drugs targeting Mitosis, Cell Cycle, DNA Replication, Apoptosis Regulation, and Protein Stability/Degradation demonstrated strong overall activity across cancer cell lines.
 
 ---
 
 ## Visualizations and Figures
 
-The analysis generated several publication-style visualizations, including:
+## Visualizations
 
-* Distribution plots of LN_IC50, AUC, and Z_SCORE.
-* Drug sensitivity ranking plots.
-* Drug resistance profiles.
-* Cancer-type sensitivity heatmaps.
-* Drug selectivity analyses.
-* Molecular feature comparisons (CNA, Gene Expression, Methylation).
-* Correlation matrices.
-* MSI and growth property analyses.
-* Target pathway sensitivity heatmaps.
+The project includes:
 
+- Global distributions of LN_IC50, AUC, and Z_SCORE.
+- Most and least potent drugs based on LN_IC50.
+- Most and least effective drugs based on AUC.
+- Most sensitive, resistant, and variable drugs based on Z_SCORE.
+- Cancer-type sensitivity distributions.
+- Drug-response heatmaps across cancer types.
+- Molecular feature comparisons (CNA, Gene Expression, Methylation).
+- Correlation analyses among response metrics.
+- Target pathway sensitivity heatmaps.
 ---
 
 ## Repository Structure
@@ -265,34 +226,39 @@ The analysis generated several publication-style visualizations, including:
 ├── figures/
 │   ├── Figure1_Global_Distributions.png
 │
-│   ├── Figure2A_SensitiveDrugs.png
-│   ├── Figure2B_ResistantDrugs.png
-│   ├── Figure2C_VariableDrugs.png
+│   ├── Figure2A_Most_Potent_Drugs_LN_IC50.png
+│   ├── Figure2B_Least_Potent_Drugs_LN_IC50.png
+│   ├── Figure2C_Most_Effective_Drugs_AUC.png
+│   ├── Figure2D_Least_Effective_Drugs_AUC.png
+│   ├── Figure2E_Most_Sensitive_Drugs_ZScore.png
+│   ├── Figure2F_Most_Resistant_Drugs_ZScore.png
+│   ├── Figure2G_Drug_Response_Variability_ZScore.png
 │
-│   ├── Figure3_CancerType_Boxplot.png
+│   ├── Figure3_Cancer_Type_Sensitivity_Boxplot.png
 │
-│   ├── Figure4_DrugSensitivityHeatmap.png
+│   ├── Figure4_CancerType_Drug_Response_Heatmap.png
 │
 │   ├── Figure5A_CNA_vs_LN_IC50.png
 │   ├── Figure5B_CNA_vs_AUC.png
-│   ├── Figure5C_GeneExpression_vs_LN_IC50
+│   ├── Figure5C_GeneExpression_vs_LN_IC50.png
 │   ├── Figure5D_GeneExpression_vs_AUC.png
 │   ├── Figure5E_Methylation_vs_LN_IC50.png
 │   ├── Figure5F_Methylation_vs_AUC.png
 │
 │   ├── Figure6A_LN_IC50_Histogram.png
 │   ├── Figure6B_AUC_Histogram.png
-│   ├── Figure6C_TopDrugs_Boxplot.png
-│   ├── Figure6D_CancerTypes_Boxplot.png
+│   ├── Figure6C_Top_Drugs_Response_Boxplot.png
+│   ├── Figure6D_Cancer_Type_Response_Boxplot.png
 │   ├── Figure6E_LN_IC50_vs_AUC_Scatter.png
-│   ├── Figure6F_CorrelationHeatmap.png
+│   ├── Figure6F_Correlation_Matrix_Heatmap.png
 │
-│   └── Figure7_ZScore_Heatmap.png
+│   └── Figure7_Target_Pathway_ZScore_Heatmap.png
 │
 ├── README.md
 │
 └── requirements.txt
 ```
+
 
 ## Installation
 
